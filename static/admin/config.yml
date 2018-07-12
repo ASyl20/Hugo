@@ -15,3 +15,5 @@ collections:
       - {label: "Title", name: "title", widget: "string", required: true }
       - {label: "Date", name: "date", widget: "date", required: true }
       - {label: "Draft", name: "draft", widget: "boolean", required: true }
+
+publish_mode: editorial_workflow
