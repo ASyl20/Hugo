@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ $var1:= "dog"}}
+{{ $var2 := "cat"}}
+
+{{if eq $var1 $var2}}
+    True
+{{else}}
+    False
+{{end}}
+{{ partial "header" .}}
+    <h1 style="color: {{.Params.color}} ">Single Template</h1>
+    <hr>
+    <h3>{{.Title}}</h3>
+    <h4>{{.Date}}</h4>
+    <h5>{{.Params.myVar}}</h5>
+    <p>{{ $myVarName := "aString" }}</p>
+    {{ $myVarName }}
+    <br>
+    <br>
+    {{add 1 15}}
+    <br>
+    {{sub 15 6}}
+    <br>
+    {{singularize "dogs"}}
+    <br>
+    {{ truncate 10 "This is a really long string"}}
+    {{.Content}}
+    <br>
+    {{ $title := .Title }}
+    {{ range .Site.Pages }}
+    <li><a href="{{.URL}}" style=" {{if eq .Title $title}} background-color:yellow {{end}}">{{.Title}}</a></li>
+    {{end}}
+    <hr>
+    {{ range .Site.Data.states}}
+    {{.name }} <br> {{.capital}} <br><br>
+    {{ end }}
+    <h1 style="color: {{.Params.color}} ">Footer</h1>
+{{end}}
+{{ define "footer" }}
+    This is the single footer
+{{end}}
