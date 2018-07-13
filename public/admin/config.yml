@@ -7,7 +7,7 @@ public_folder: "/images/uploads"
 
 collections:
   - name: "dir1"
-    label: "Dir1"
+    label: "dir1"
     folder: "content/dir1"
     create: true
     fields:
